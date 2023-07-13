@@ -112,15 +112,16 @@ export default function Home() {
       </div>
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center">
         <form>
-          <div className="flex gap-8">
+          <div className="flex gap-1 md:gap-4 lg:gap-8">
             {numbers.map((num, index) => (
               <input
                 type="text"
                 key={index}
                 ref={numberRefs.current[index]}
                 onChange={(e) => setNum(index, e.target.value)}
-                className="font-bold text-5xl text-center bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-16 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="font-bold text-lg md:text-4xl lg:text-5xl w-6 h-6 p-0 md:w-12 md:h-12 lg:w-16 lg:h-16 lg:p-2.5 text-center bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 maxLength={1}
+                inputMode="numeric"
                 required
               />
             ))}
@@ -174,13 +175,15 @@ export default function Home() {
       {ready && (
         <div className="mt-8 w-1/2 h-16 flex flex-col items-center justify-center">
           <div className="flex items-center justify-center">
-            <div className="text-5xl pr-4 tracking-widest text-red-500">
+            <div className="text-2xl sm:text-3xl md:text-5xl pr-4 tracking-widest text-red-500">
               {chkDigit}
             </div>
-            <div className="text-5xl pr-8 tracking-widest">{corpNumber}</div>
+            <div className="text-2xl sm:text-4xl md:text-5xl pr-8 tracking-widest">
+              {corpNumber}
+            </div>
             <div className="" onClick={() => copyToClipboard()}>
               <svg
-                className="w-8 h-8 text-gray-800 dark:text-white"
+                className="w-6 h-6 md:w-8 md:h-8 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -195,23 +198,23 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <div>
-              {copied && (
-                <div
-                  className="ml-4 p-2 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
-                  role="alert"
-                >
-                  <span className="font-medium">Copied</span>
-                </div>
-              )}
-            </div>
+          </div>
+          <div className="mt-4">
+            {copied && (
+              <div
+                className="ml-4 p-2 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400"
+                role="alert"
+              >
+                <span className="font-medium">Copied</span>
+              </div>
+            )}
           </div>
           <div className="mt-8">
             <a
               href={link}
-              className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              className="text-xl md:text-3xl font-medium text-blue-600 dark:text-blue-500 hover:underline"
             >
-              国税庁の法人情報公表サイトへのリンクはこちら
+              法人情報公表サイトへ
             </a>
           </div>
         </div>

@@ -119,7 +119,7 @@ export default function Home() {
                 key={index}
                 ref={numberRefs.current[index]}
                 onChange={(e) => setNum(index, e.target.value)}
-                className="font-bold text-lg md:text-4xl lg:text-5xl w-6 h-6 p-0 md:w-12 md:h-12 lg:w-16 lg:h-16 lg:p-2.5 text-center bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="font-bold text-lg md:text-4xl lg:text-5xl w-6 h-10 p-0 md:w-12 md:h-16 lg:w-16 lg:h-20 lg:p-2.5 text-center bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 maxLength={1}
                 inputMode="numeric"
                 required
